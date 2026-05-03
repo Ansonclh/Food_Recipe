@@ -98,9 +98,9 @@ import {
                       style={styles.recipeImage}
                     />
                     <Text style={styles.recipeDescription} testID="recipeDescp">
-                      {recipe.description.length > 50
-                        ? recipe.description.substring(0, 50) + "..."
-                        : recipe.description}
+                      {recipe.instructions.length > 50
+                        ? recipe.instructions.substring(0, 50) + "..."
+                        : recipe.instructions}
                     </Text>
                   </TouchableOpacity>
   

@@ -73,11 +73,38 @@ import {
   
         {/* Recipe Details */}
         <View style={styles.contentContainer} testID="contentContainer">
-        <Text style={styles.recipeTitle}>{recipe.title}</Text>
-  <View style={styles.sectionContainer}>
-    <Text style={styles.sectionTitle}>Content</Text>
-    <Text style={styles.contentText}>{recipe.description}</Text>
-  </View>
+          <Text style={styles.recipeTitle}>{recipe.title}</Text>
+
+          <View style={styles.miscContainer} testID="miscContainer">
+            <View style={styles.miscItem}>
+              <Text style={styles.miscIcon}>🕒</Text>
+              <Text style={styles.miscText}>35 Mins</Text>
+            </View>
+    
+            <View style={styles.miscItem}>
+              <Text style={styles.miscIcon}>👥</Text>
+              <Text style={styles.miscText}>03 Servings</Text>
+            </View>
+    
+            <View style={styles.miscItem}>
+              <Text style={styles.miscIcon}>🔥</Text>
+              <Text style={styles.miscText}>103 Cal</Text>
+            </View>
+    
+            <View style={styles.miscItem}>
+              <Text style={styles.miscIcon}>🎚️</Text>
+              <Text style={styles.miscText}>Medium</Text>
+            </View>
+          </View>
+          
+          <View style={styles.sectionContainer}>
+            <Text style={styles.sectionTitle}>Ingredients</Text>
+            <Text style={styles.contentText}>{recipe.ingredients}</Text>
+          </View>
+          <View style={styles.sectionContainer}>
+            <Text style={styles.sectionTitle}>Instructions</Text>
+            <Text style={styles.contentText}>{recipe.instructions}</Text>
+          </View>
         </View>
       </ScrollView>
     );
@@ -146,5 +173,28 @@ import {
       fontSize: hp(1.6),
       color: "#4B5563",
     },
+    miscContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginBottom: 20,
+    paddingHorizontal: wp(4),
+  },
+  miscItem: {
+    alignItems: "center",
+    backgroundColor: "#F5F5F5",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 10,
+    elevation: 3,
+  },
+  miscIcon: {
+    fontSize: hp(3.5),
+    marginBottom: 5,
+  },
+  miscText: {
+    fontSize: hp(2),
+    fontWeight: "600",
+    fontFamily: "Lato",
+  },
   });
   
