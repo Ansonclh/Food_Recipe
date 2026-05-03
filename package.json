@@ -1,7 +1,7 @@
 {
   "name": "recipeapplication",
   "version": "1.0.0",
-  "main": "expo/AppEntry.js",
+  "main": "expo/App.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
