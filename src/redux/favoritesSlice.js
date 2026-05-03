@@ -10,10 +10,13 @@ const favoritesSlice = createSlice({
   reducers: {
    toggleFavorite: (state, action) => {
     const recipe = action.payload;
-    if (state.favoriterecipes.includes(recipe.foodID)) {
-      state.favoriterecipes = state.favoriterecipes.filter((id) => id !== recipe.foodID);
+    const existingIndex = state.favoriterecipes.findIndex(
+    (favrecipe) => favrecipe.idFood === recipe.idFood
+    );
+    if (existingIndex >= 0) {
+      state.favoriterecipes.splice(existingIndex, 1); // Remove from favorites
     } else {
-      state.favoriterecipes.push(recipe);
+      state.favoriterecipes.push(recipe); // Add to favorites
     }
   }
   },
